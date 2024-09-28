@@ -1,9 +1,9 @@
-<?php
-@include 'connect.php';
+<?html
+@include 'connect.html';
 session_start();
 
 if (!isset($_SESSION['admin_name'])) {
-    header('location:register.php');
+    header('location:register.html');
 }
 ?>
 
@@ -26,7 +26,7 @@ if (!isset($_SESSION['admin_name'])) {
     <header class="sub-header">
         <nav>
             <ul>
-		<li><a href="start.php">HOME</a></li>
+		<li><a href="start.html">HOME</a></li>
 		<li><a href="#about">BILLING</a></li>
 		<li><a href="#about">PAYMENT</a></li>                     
                 <li><a href="#contact">CONTACT</a></li> 

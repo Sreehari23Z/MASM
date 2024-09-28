@@ -31,10 +31,10 @@ color: white;
 border: 1px solid white;
 padding:12px 34px;
 font-size: 13px;
-background: transparent:
+background: transparent;
 position: relative;
 cursor:pointer; 
-font-weight: bold
+font-weight: bold;
 }
 .btn:hover{
 background:white;;
