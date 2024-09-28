@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="content">
-        <h1>PowerSphere</h1>
-        <p>India's Electricity Needs</p>
+        <h1>VOGIQ</h1>
+        <p>At VogiQ, we believe fashion is more than just clothing—it's an expression of individuality, confidence, and creativity. Whether you're seeking timeless elegance, street-savvy chic, or the latest runway-inspired trends, our curated collections offer something for every fashion-forward individual.</p>
         <a href="index.php" class="btn">Get Started</a>
     </div>
 </body>
