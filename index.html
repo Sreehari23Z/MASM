@@ -1,5 +1,5 @@
-<?html 
-include 'connect.html';
+<?php 
+include 'connect.php';
 session_start();
 
 ?>
@@ -16,7 +16,7 @@ session_start();
 <body>
     <div class="container" id="signup" style="display:none;">
         <h1 class="form-title">Register</h1>
-        <form method="post" action="register.html">
+        <form method="post" action="register.php">
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <input type="text" name="fName" id="fName" placeholder="First Name" required>
@@ -37,15 +37,7 @@ session_start();
                 <input type="password" name="password" id="password" placeholder="Password" required>
                 <label for="password">Password</label>
             </div>
-            <div class="input-group">
-                <i class="fas fa-user"></i>
-                <select name="user_type" id="user_type" required>
-                    <option value="" disabled selected>Select Role</option>
-                    <option value="user">User</option>
-                    <option value="admin">Admin</option>
-                </select>
-                <label for="user_type">User or Admin</label>
-            </div>
+            
             <input type="submit" class="btn" value="Sign Up" name="signUp">
         </form>
         <div class="links">
@@ -56,11 +48,11 @@ session_start();
 
     <div class="container" id="signIn">
         <h1 class="form-title">Sign In</h1>
-        <form method="post" action="register.html">
-            <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <label for="email">Email</label>
+        <form method="post" action="register.php">
+            <div class="input-group"></div>
+                <i class="fas fa-user"></i>
+                <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+                <label for="lName">Last Name</label>
             </div>
             <div class="input-group">
                 <i class="fas fa-lock"></i>
@@ -81,4 +73,3 @@ session_start();
     <script src="script.js"></script>
 </body>
 </html>
-
