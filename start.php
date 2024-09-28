@@ -14,6 +14,7 @@
     <div class="content">
         <h1>PowerSphere</h1>
         <p>India's Electricity Needs</p>
+        <a href="index.php" class="btn">Get Started</a>
     </div>
 </body>
 </html>
