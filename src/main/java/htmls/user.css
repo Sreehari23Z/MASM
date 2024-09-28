@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url('earth-tones-color-trend-fashion.jpg'); /* Path to your image */
+    background-size: cover; /* Ensure the image covers the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Fix the background while scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    opacity: 0.9; /* Slight transparency to see some background through */
+}
+
+/* Form and Button Styling */
+h1.form-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    padding-left: 45px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #0056b3;
+}
+
+.input-group label {
+    position: absolute;
+    top: -12px;
+    left: 50px;
+    background-color: white;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #777;
+    pointer-events: none;
+}
+
+.input-group i {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    color: #aaa;
+    font-size: 18px;
+}
+
+.btn {
+    background-color: #ce4180;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ce4180;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links p {
+    font-size: 14px;
+    color: #777;
+}
+
+.links button {
+    background-color: transparent;
+    border: none;
+    color:#ce4180;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.links button:hover {
+    color:#ce4180;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+}

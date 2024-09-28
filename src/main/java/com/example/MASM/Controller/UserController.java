@@ -44,5 +44,9 @@ public class UserController {
         }userRepository.save(user);
         return ResponseEntity.ok("Logged in as "+user.getFname()+" "+user.getLname());
     }
+    @GetMapping("/home")
+    public String home(){
+        return "start";
+    }
 
 }
