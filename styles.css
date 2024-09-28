@@ -1,232 +1,64 @@
-* {
-  box-sizing: border-box;
+/* Global settings */
+body, html {
   margin: 0;
   padding: 0;
-font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  overflow: hidden;
 }
 
-body {
- font-family: 'Poppins', sans-serif;
-  font-family: 'Helvetica';
-  background-color: #f4f4f4;
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('The-Rise-of-Gender-Neutral-Segment-in-Fashion.jpeg') no-repeat center center/cover;
 }
 
-.main-header {
-  
- background-color: #1C39BB; 
- color: BLACK; 
- padding: 20px;
- text-align: center; 
- position: sticky; 
- top: 0; 
-
- z-index: 1000;
-
-}
-
-
-.sub-header {
-  
-  background-color: #73C2FB; 
-  color: black; 
-
-  padding: 10px; 
-   position: sticky; 
-  top: 80px;
-  text-align: center; 
-  justify-content: center;
-  z-index: 1000; 
-
- 
-}
-.footer {
-     display: flex;
-  height: 100px;
-  background-color: black; 
-  color: white; 
-  text-align: center;
-  align-items: center;
-  justify-content: center; 
-  position: relative; 
-  bottom: 0; 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-position:absolute;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* A dark overlay to make text visible */
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+.content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
   display: flex;
-   justify-content: center;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 10px;
-   padding: 20px;
-margin-top:-30px;
-}
-
-
-
-nav ul li a {
-  text-align: center; 
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  height: 100%;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #ff4081;
   color: white;
   text-decoration: none;
-   margin-top:-20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff6b9d;
 }
 
 
-
-nav ul li a:hover{
-  color:black;
-  font-weight: bold;
-}
-.hero {
-background-image: url('789.png');
-position: relative;
-background-position: center; 
- 
-padding: 600px 200px;
-  
-text-align:center;
- width: 100%;
- length: 40%;
-max-height: 1700px;
-}
-.hero h1{ 
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%,-50%); 
-  text-align:center;
-  justify-content: center;
-  font-size:70px;
-  color:white;
-  position: absolute;
-}
-
-.About h1{
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%); 
-  font-size: 80px;
-}
-.About h3{
-margin-top: -270px;
-font-size: 50px;	
-}
-.row{
-width:100%;
-margin-top: -100px;
-display: flex; 
-justify-content: center;
-gap:60px;
-}
-
-.fac-col{
-  margin-top: 550px;
- flex-basis: 31%;
- background: white;
- border-radius:8px;
-font-size:20px;
-transition: 0.5s;
-padding: 30px 10px 30px 10px; 
-
-}
-.fac-col:hover{
-
-background:#Ffd700;
-opacity: 1;
-}
-a {
-
-   position: relative; 
-   top: 10px;  
-   color: blue;
-  
-   text-decoration: none;
-  
-   transition: color 0.3s,
-   text-decoration 0.3s;
-
-   font-size:17px;
-}
-
-
-a:hover {
-  
-color: BLACK;
-  
-bottom:49%;
-opacity: 10;
-}
-.help{
-width: 100%; 
-min-width:500px; 
-text-align: center; 
-display: flex; 
-align-items: center; 
-background: white; 
-transition: 0.5s;
-height:100px;
-border-radius:10px;
-margin: 490px auto;
-}
-.help:hover{
-   background: linear-gradient(to right, #184ed6, #002a91);
- color: white;
-}
-.help h1{
-color :black;
-top:1400px;
-display: flex; 
-margin-bottom: 100px;
-}
-.help h2{
-align-items: center;
-flex: 1 0 300px;
-color :black;
-text-align: center;
-}
-.help h2:hover{
- color: white;
-}
-footer {
-  
-     background-color: #333;  
-       color: white;
-
-  text-align: center;
-  padding: 40px;
-  position: relative; 
-
-  bottom: 0; 
-
-  width: 100%; 
-
-}
-@media (max-width: 768px) {
-  
-.hero h1 {
-      
-  font-size: 8vw; 
-}
-  
-
-.About h1{
- font-size:5vw;
-} 
-.About h3 {
-     
-font-size: 3vw; 
- }
-  
-  
-.fac-col {
-
-      flex: 1 1 100%; 
- }
-
-}

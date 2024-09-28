@@ -1,162 +1,141 @@
-
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
 
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
 
+/* Background styling */
 body {
-    background-image: url('789.png'); 
-    background-color: #95b7d2; 
+    background: url('download.jpeg') no-repeat center center fixed; /* Add your image here */
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    color: white; /* Use white text for readability over a background image */
 }
 
-
+/* Container Styling */
 .container {
-    background-color: white;
-    padding: 30px;
+    background: rgba(0, 0, 0, 0.6); /* Make the container semi-transparent */
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 100%;
     text-align: center;
+    color: white; /* Ensure text inside the form is white */
 }
 
-
-h1.form-title {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+/* Form title */
+.form-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
 }
 
-
+/* Input Group Styling */
 .input-group {
-    margin-bottom: 20px;
     position: relative;
-}
-
-.input-group input,
-.input-group select {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-    padding-left: 45px; 
-}
-
-.input-group input:focus,
-.input-group select:focus {
-    border-color: #0056b3;
-}
-
-.input-group label {
-    position: absolute;
-    top: -12px;
-    left: 50px; 
-    background-color: white;
-    padding: 0 5px;
-    font-size: 12px;
-    color: #777;
-    pointer-events: none;
+    margin-bottom: 25px;
 }
 
 .input-group i {
     position: absolute;
-    top: 16px; 
-    left: 15px;
-    color: #aaa;
-    font-size: 18px;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #ccc; /* Lighter color for icons */
 }
 
-
+.input-group input, 
 .input-group select {
-    appearance: none;
-    padding-left: 45px;
-   
-    background-repeat: no-repeat;
-    background-position: right 15px center;
+    width: 100%;
+    padding: 12px 40px;
+    font-size: 1rem;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8); /* Input fields with slightly transparent background */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: #ff4081;
+}
+
+/* Placeholder styling */
+input::placeholder, 
+select::placeholder {
+    color: #999;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Button Styling */
 .btn {
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
     width: 100%;
-    font-size: 16px;
+    padding: 12px;
+    background-color: #ff4081;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #003d7a;
+    background-color: #ff6b9d;
 }
 
-
-.or {
-    margin: 20px 0;
-    color: #777;
-}
-
+/* Link Styling */
 .links {
     margin-top: 20px;
 }
 
 .links p {
-    font-size: 14px;
-    color: #777;
+    margin-bottom: 10px;
 }
 
 .links button {
-    background-color: transparent;
+    background: none;
     border: none;
-    color: #0056b3;
+    color: #ff4081;
     cursor: pointer;
-    font-size: 14px;
     text-decoration: underline;
+    font-size: 1rem;
+    padding: 0;
 }
 
-.links button:hover {
-    color: #003d7a;
-}
-
-
-.recover {
-    text-align: right;
-}
-
-.recover a {
-    color: #0056b3;
-    font-size: 14px;
-    text-decoration: none;
-}
-
-.recover a:hover {
-    color: #003d7a;
-    text-decoration: underline;
-}
-
-
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 600px) {
     .container {
-        padding: 20px;
         width: 90%;
+        padding: 30px;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px;
     }
 }
+
+
