@@ -106,14 +106,14 @@ h1.form-title {
 .links button {
     background-color: transparent;
     border: none;
-    color: #0056b3;
+    color:#ce4180;
     cursor: pointer;
     font-size: 14px;
     text-decoration: underline;
 }
 
 .links button:hover {
-    color: #003d7a;
+    color:#ce4180;
 }
 
 /* Responsive Design */
