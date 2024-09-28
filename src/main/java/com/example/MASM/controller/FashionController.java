@@ -5,50 +5,61 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.HashMap;
+import java.util.Base64;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/fashion")
 public class FashionController {
 
-    private static final String HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/your_model_name_here";
-    private static final String HUGGING_FACE_API_KEY = "YOUR_HUGGING_FACE_API_KEY";
-
     @PostMapping("/generate")
-    public ResponseEntity<String> generateFashionImage(@RequestBody Map<String, String> request) {
-        String userPrompt = request.get("prompt");
-
-        if (userPrompt == null || userPrompt.isEmpty()) {
-            return ResponseEntity.badRequest().body("Prompt cannot be empty.");
+    public ResponseEntity<?> generateFashion(@RequestParam("image") MultipartFile image, @RequestParam("prompt") String prompt) {
+        if (image.isEmpty()) {
+            return ResponseEntity.badRequest().body("No image received");
         }
 
         try {
-            RestTemplate restTemplate = new RestTemplate();
-
+            // Prepare headers
             HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.set("Authorization", "Bearer " + HUGGING_FACE_API_KEY);
+            headers.setContentType(MediaType.MULTIPART_FORM_DATA);
 
-            Map<String, String> body = new HashMap<>();
-            body.put("inputs", userPrompt);
+            // Prepare body with image and prompt
+            MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
+            body.add("image", image.getResource());
+            body.add("prompt", prompt);
 
-            HttpEntity<Map<String, String>> entity = new HttpEntity<>(body, headers);
+            // Make a request to the model server (Python API)
+            RestTemplate restTemplate = new RestTemplate();
+            HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
+            ResponseEntity<String> response = restTemplate.exchange("http://localhost:5000/generate-fashion", HttpMethod.POST, requestEntity, String.class);
 
-            ResponseEntity<String> response = restTemplate.exchange(
-                    HUGGING_FACE_API_URL,
-                    HttpMethod.POST,
-                    entity,
-                    String.class
-            );
+            if (response.getStatusCode().is2xxSuccessful()) {
+                // Get the generated image as a Base64 string
+                String generatedImageBase64 = response.getBody();
+                System.out.println("image: "+ generatedImageBase64);
+                // Verify the response is not null and contains the expected Base64 data
+                if (generatedImageBase64 != null && !generatedImageBase64.isEmpty()) {
+                    // Optionally decode and log for debugging
+                    byte[] imageBytes = Base64.getDecoder().decode(generatedImageBase64);
+                    System.out.println("Received generated image of size: " + imageBytes.length);
 
-            return ResponseEntity.ok(response.getBody());
-
+                    // Return the Base64 image as a JSON response
+                    return ResponseEntity.ok(Map.of("image", generatedImageBase64));
+                } else {
+                    return ResponseEntity.status(500).body("Received empty or invalid image data from model server");
+                }
+            } else {
+                return ResponseEntity.status(response.getStatusCode()).body("Error in generating image: " + response.getBody());
+            }
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error generating fashion image: " + e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Internal server error: " + e.getMessage());
         }
     }
 }

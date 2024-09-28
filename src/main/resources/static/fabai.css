@@ -1,0 +1,341 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #03080e; /* Deep black background */  
+    color: #ffffff; /* White text for contrast */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #050e18;
+    border-bottom: 1px solid #333;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.upgrade-button{
+    margin-left: 5px;
+}
+
+
+.navbar-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #ae4cf7; /* Gradient highlight color */
+}
+
+.menu-item {
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.menu-item.active {
+    font-weight: bold;
+    color: #ae4cf7;
+}
+
+.user-balance, .toggle-switch {
+    display: flex;
+    align-items: center;
+}
+
+.balance-icon {
+    margin-right: 5px;
+}
+
+.upgrade-button {
+    padding: 8px 16px;
+    background: linear-gradient(90deg, #4e4cec, #ae4cf7);
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.upgrade-button:hover {
+    opacity: 0.9;
+}
+
+.toggle-label {
+    margin-right: 10px;
+}
+
+/* Toggle Switch Styles */
+.switch {
+    position: relative;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ae4cf7;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* Sidebar Styling */
+.container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px);
+}
+
+.sidebar {
+    width: 415px;
+    background-color: #060d15;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+
+.preset{
+    margin-bottom: 40px;
+    font-size: larger;
+}
+.preset fieldset{
+    background-image: url("pheonix.jfif");
+    margin: auto;
+    opacity: 0.7;
+    text-align-last: center;
+    width: 355px;
+    border-radius: 20px;
+    border: none;
+    padding: 40px;
+    background-color: #0c131c;
+}
+
+.setting fieldset{
+    margin: auto;
+    padding: 40px;
+    opacity: 0.8;
+
+    text-align: center;
+    text-align-last: center;
+    width: 350px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #0c131c;
+}
+
+.settings, .generation-mode, .image-dimensions {
+    margin-bottom: 50px;
+    font-size: larger;
+}
+
+.preset select, .setting select{
+    background-color: #333;
+    padding: 1px;
+    border: none;
+    font-size: large;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+.generation-mode {
+    margin-bottom: 20px;
+}
+
+.generation-mode h3 {
+    margin-bottom: 10px;
+}
+
+.mode-btn {
+    background-color: #444;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mode-btn.quality::after,
+.mode-btn.ultra::after {
+    content: '💎';
+    margin-left: 5px;
+}
+
+.image-dimensions {
+    margin-bottom: 20px;
+}
+/* Main Content Styling */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    border: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.upload-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Hide the file input */
+.file-upload-input {
+    display: none; /* Hides the default file input */
+    font-size: 100px;
+}
+
+/* Style for the clip button */
+.clip-button {
+    background-color: #050e18; /* Clip button color */
+    color: white;
+    border: none;
+    font-size: 21px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.clip-icon {
+    margin-right: 5px; /* Space between icon and text */
+    width: 36px; /* Icon width */
+    height: 36px; /* Icon height */
+    border-radius: 50px;
+}
+
+.upload-message {
+    display: none;
+    margin-left: 5px; /* Space for the message */
+    font-size: 21px;
+    background-color: #050e18;
+    padding: 10px;
+}
+.prompt-input {
+    flex: 1;
+    border-radius: 21px;
+    margin-left: 10px;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    background-color: #050e18;
+    color: #fff;
+    margin-right: 10px; /* Space between input and generate button */
+}
+
+.generate-btn {
+    padding: 10px 20px;
+    font-size: larger;
+    background-color: #4e4cec; /* Button color */
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    background-color: #ae4cf7; /* Hover color */
+}
+
+
+
+
+.message-box {
+    margin-top: 20px;
+    border: 1px solid #555;
+    padding: 20px;
+    font-size: larger;
+    border-radius: 10px;
+    text-align: center;
+    color: #999;
+}
+
+.card-container {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto; /* Adds horizontal scroll if content overflows */
+    justify-content: space-between; /* Distribute space evenly between cards */
+    align-items: flex-start; /* Align cards at the top */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    font-size: larger;
+    margin-right: 5px;
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.card:hover {
+    background-color: #444444;
+}

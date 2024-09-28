@@ -1,4 +1,4 @@
-package com.example.MASM.Controller;
+package com.example.MASM.controller;
 
 import com.example.MASM.model.User;
 import com.example.MASM.repository.UserRepository;

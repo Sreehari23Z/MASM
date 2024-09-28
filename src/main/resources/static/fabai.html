@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Creation Screen</title>
+    <link rel="stylesheet" href="fabai.css"> <!-- Make sure to use a valid stylesheet link -->
+    <script src="fabai.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="logo.png" alt="Logo" class="logo"> <!-- Add the correct path to your logo -->
+            <span class="navbar-title">Fashion.<span class="highlight">Ai</span></span>
+        </div>
+        <div class="navbar-center">
+            <span class="menu-item active">Image <span class="highlight">Creation</span></span>
+            <button class="upgrade-button">Upgrade</button>
+        </div>
+        <div class="navbar-right">
+            <div class="toggle-switch">
+                <span class="toggle-label">Legacy Mode</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for Sidebar and Main Content -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="preset">
+                <fieldset>
+                    <label for="preset-enhance">Preset</label>
+                    <select id="preset-enhance">
+                        <option>Vogiq Phoenix</option>
+                    </select>
+                </fieldset>
+            </div>
+            <div class="settings">
+                <div class="setting">
+                    <fieldset><label for="prompt-enhance">Prompt Enhance</label>
+                        <select id="prompt-enhance">
+                            <option>Auto</option>
+                        </select>
+                    </fieldset>
+                </div>
+                <div class="setting">
+                    <fieldset>
+                        <label for="preset-style">Preset Style</label>
+                        <select id="preset-style">
+                            <option>Dynamic</option>
+                        </select>
+                    </fieldset>
+                </div>
+                <div class="setting">
+                    <fieldset>
+                        <label for="contrast">Contrast</label>
+                        <select id="contrast">
+                            <option>Medium</option>
+                        </select>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="generation-mode">
+                <h3>Generation Mode</h3>
+                <button class="mode-btn">Fast</button>
+                <button class="mode-btn quality">Quality</button>
+                <button class="mode-btn ultra">Ultra</button>
+            </div>
+            <div class="image-dimensions">
+                <h3>Image Dimensions</h3>
+                <!-- Dimension options can go here -->
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="upload-container">
+                <!-- Hidden file input -->
+                <input type="file" id="fileUpload" class="file-upload-input" onchange="updateUploadMessage()">
+                <!-- Clip button -->
+                <span id="uploadMessage" class="upload-message">No file attached</span>
+                <button type="button" class="clip-button" onclick="document.getElementById('fileUpload').click();">
+                    <img src="clip.jfif" alt="Clip Icon" class="clip-icon"> <!-- Add the path to your clip icon -->
+                    Attach File
+                </button>
+                <input type="text" class="prompt-input" placeholder="Type a prompt...">
+                <button class="generate-btn">Generate</button>
+            </div>
+
+            <div class="message-box">
+                <p>Please type a prompt above to create your image set.</p>
+            </div>
+            <div class="card-container">
+                <div class="card">Give body Dimensions</div>
+                <div class="card">Plan a relaxing Outfit</div>
+                <div class="card">Create a Fashion plan</div>
+            </div>
+
+
+        </main>
+    </div>
+</body>
+
+</html>
