@@ -1,5 +1,5 @@
-<?php 
-include 'connect.php';
+<?html 
+include 'connect.html';
 session_start();
 
 if(isset($_POST['signUp'])){
@@ -17,7 +17,7 @@ if(isset($_POST['signUp'])){
         $insertQuery = "INSERT INTO users (firstName, lastName, email, password, user_type)
                         VALUES ('$firstName', '$lastName', '$email', '$password', '$user_type')";
         if($conn->query($insertQuery) === TRUE){
-            header("location:index.php?status=registered");
+            header("location:index.html?status=registered");
         } else {
             echo "Error: " . $conn->error;
         }
@@ -35,15 +35,15 @@ if(isset($_POST['signIn'])){
         $row = mysqli_fetch_array($result);
         if($row['user_type'] == 'admin'){
             $_SESSION['admin_name'] = $row['firstName'] . ' ' . $row['lastName'];
-            header('location:admin.php');
+            header('location:admin.html');
         } elseif($row['user_type'] == 'user'){
             $_SESSION['user_name'] = $row['firstName'] . ' ' . $row['lastName'];
-            header('location:userspage.php');
+            header('location:userspage.html');
         }
     } 
     else 
     {
-        header('location:error.php');
+        header('location:error.html');
         exit(); 
     }
 
