@@ -7,22 +7,22 @@ from PIL import Image
 from io import BytesIO
 import base64
 
-# Set up logging
-logging.basicConfig(level=logging.INFO)  # Consider changing to INFO for production
+
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-# Print diagnostic information
+
 logger.info(f"Python version: {sys.version}")
 logger.info(f"Python executable: {sys.executable}")
 logger.info(f"Sys path: {sys.path}")
 
-# Check PyTorch and CUDA
+
 logger.info(f"PyTorch version: {torch.__version__}")
 logger.info(f"CUDA available: {torch.cuda.is_available()}")
 
-# Load the pretrained model
+
 device = "cuda" if torch.cuda.is_available() else "cpu"
 logger.info(f"Using device: {device}")
 
