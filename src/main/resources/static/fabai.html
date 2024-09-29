@@ -45,7 +45,8 @@
             </div>
             <div class="settings">
                 <div class="setting">
-                    <fieldset><label for="prompt-enhance">Prompt Enhance</label>
+                    <fieldset>
+                        <label for="prompt-enhance">Prompt Enhance</label>
                         <select id="prompt-enhance">
                             <option>Auto</option>
                         </select>
@@ -87,12 +88,12 @@
                 <input type="file" id="fileUpload" class="file-upload-input" onchange="updateUploadMessage()">
                 <!-- Clip button -->
                 <span id="uploadMessage" class="upload-message">No file attached</span>
-                <button type="button" class="clip-button" onclick="document.getElementById('fileUpload').click();">
+                <button type="button" class="clip-button" id="uploadButton" onclick="document.getElementById('fileUpload').click();">
                     <img src="clip.jfif" alt="Clip Icon" class="clip-icon"> <!-- Add the path to your clip icon -->
                     Attach File
                 </button>
-                <input type="text" class="prompt-input" placeholder="Type a prompt...">
-                <button class="generate-btn">Generate</button>
+                <input type="text" class="prompt-input" id="promptInput" placeholder="Type a prompt...">
+                <button type="button" class="generate-btn" id="generateButton">Generate</button>
             </div>
 
             <div class="message-box">
@@ -103,10 +104,14 @@
                 <div class="card">Plan a relaxing Outfit</div>
                 <div class="card">Create a Fashion plan</div>
             </div>
-
-
+            <div id="imageContainer" class="image-container"></div>
+                <h3>Generated Image</h3>
+                <img id="generatedImage" src="" alt="Generated Image">
+                <p id="errorMessage"></p> <!-- Error message section -->
+            </div>
         </main>
     </div>
+    <script src="fabai.js"></script> <!-- Include your script file -->
 </body>
 
 </html>

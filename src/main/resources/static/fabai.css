@@ -339,3 +339,13 @@ input:checked + .slider:before {
 .card:hover {
     background-color: #444444;
 }
+
+.image-container {
+    display: none;
+    max-width: 100%;
+    height: auto;
+}
+#errorMessage{
+    color: red;
+    display: none;
+}
