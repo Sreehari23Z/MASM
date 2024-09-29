@@ -154,7 +154,7 @@ input:checked + .slider:before {
     margin: auto;
     opacity: 0.7;
     text-align-last: center;
-    width: 355px;
+    width: 255px;
     border-radius: 20px;
     border: none;
     padding: 40px;
